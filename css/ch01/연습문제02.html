@@ -1,0 +1,52 @@
+<style>
+    /* .bg{
+        font-size: 1.5rem;
+        background-color: yellow;
+        color: red;
+    } */
+    
+    [bg=yellow] {
+        font-size: 1.5rem; /* 10px의 1.5배*/
+        background-color: yellow;
+        color: red;
+    }
+
+    /* .sm {
+        font-size: 0.7rem;
+    } */
+    [data-size=small] {
+        font-size: 0.7rem;
+    }
+
+    /* .pse{
+        font-size: 1.5rem;
+    } */
+
+    [data-size=large] {
+        font-size: 1.5rem;
+    }
+
+</style>
+
+<body>
+    <p>selector</p>
+    <ul>
+        <li>
+            <p>tag</p>
+        </li>
+        <li><span>class</span></li>
+        <li>
+            <p>id</p>
+        </li>
+        <li class="bg" bg='yellow'><span data-size='large'>
+                attribute</span></li>
+        <li>
+            <p>descendant / child</p>
+        </li>
+        <li><span class="sm" data-size='small'>
+                siblings / adjacent</span></li>
+        <li>
+            <p class="pse" data-size='large'>pseudo</p>
+        </li>
+    </ul>
+</body>

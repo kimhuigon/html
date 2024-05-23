@@ -1,0 +1,23 @@
+<body>
+  <div id="clock"></div>
+  <script>
+    setInterval(run, 1000);
+    let count = 0;
+    function run() {
+      const date = new Date();
+
+      let h = date.getHours();
+      h = h < 10 ? '0' + h : h;
+
+      let m = date.getMinutes();
+      m = m < 10 ? '0' + m : m;
+
+      let s = date.getSeconds();
+      s = s < 10 ? '0' + s : s;
+      
+      const clock = document.querySelector('#clock');
+      clock.innerHTML = `${h}시 ${m}분 ${s}초`;
+    }
+
+  </script>
+</body>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script>
+    // 4초 뒤에 원하는 기능 실행
+    setTimeout(show, 4000);
+
+    function show() { // callback function
+      alert('Hello');
+    }
+
+    const print = function () { // anonymous function
+      console.log('print');
+    }
+    function run(p) {
+      p();
+    }
+    run(print);
+  </script>
+</body>
+
+</html>

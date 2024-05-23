@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>말하는 감자</title>
+    <meta property="og:title" content="동글동글왕감자">
+    <meta property="og:image" content="/images/potato.png">
+    
+</head>
+<body style="text-align: center;">
+    <div>
+        <h1>Hello World?</h1>
+        <p>개흐접의 페이지입니다.</p>
+        <b>ㄹㅇ 개흐접임ㅋㅋ</b>
+    </div>
+    <div id="map" style="width:500px;height:400px; margin-left: 50%; transform: translateX(-50%); margin-top: 100px;"></div>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=41ce8b9519ec9b48b457759b6dff0a54"></script>
+    <script>
+        navigator.geolocation.getCurrentPosition(pos => {
+          const lat = pos.coords.latitude;
+          const lng = pos.coords.longitude;
+          const container = document.getElementById('map');
+          const options = {
+            center: new kakao.maps.LatLng(lat, lng),
+            level: 3
+          };
+    
+          const map = new kakao.maps.Map(container, options);
+    
+          const markerPosition = new kakao.maps.LatLng(lat, lng);
+    
+          // 마커를 생성합니다
+          const marker = new kakao.maps.Marker({
+            position: markerPosition
+          });
+    
+          // 마커가 지도 위에 표시되도록 설정합니다
+          marker.setMap(map);
+        });
+      </script>
+</body>
+</html>

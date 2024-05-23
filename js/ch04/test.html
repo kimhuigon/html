@@ -1,0 +1,56 @@
+<style>
+  #draggable {
+    width: 100px;
+    height: 100px;
+    padding: 0.5em;
+    float: left;
+    margin: 10px 10px 10px 0;
+    border: 1px solid black;
+  }
+
+  #droppable {
+    width: 150px;
+    height: 150px;
+    padding: 0.5em;
+    float: left;
+    margin: 10px;
+    border: 1px solid black;
+  }
+</style>
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
+  <ul id="sortable">
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+    <li>d</li>
+    <li>e</li>
+  </ul>
+
+  <div id="draggable" class="ui-widget-content">
+    <p>Drag me to my target</p>
+  </div>
+
+  <div id="droppable" class="ui-widget-header">
+    <p>Drop here</p>
+  </div>
+
+  <script>
+    $(function () {
+      $("#sortable").sortable();
+    });
+
+    $("#draggable").draggable();
+    $("#droppable").droppable({
+      drop: function (event, ui) {
+        $(this)
+          .addClass("ui-state-highlight")
+          .find("p")
+          .html("Dropped!");
+      }
+    });
+  </script>
+</body>

@@ -1,0 +1,41 @@
+<body>
+  <input type="text" onclick="run()">
+  <input type="checkbox">
+  <script>
+    function run() {
+      let map = {'key': 'value'}
+      alert(map.key)
+      
+      // checkbox 체크하기
+      let check = document.querySelector('input:nth-of-type(2)');
+      console.log(typeof check);
+
+      let status = check.checked;
+      console.log(typeof status);
+
+      if (status) {
+        check.checked = false;
+      } else {
+        check.checked = true;
+      }
+    }
+
+    let input = document.querySelector('[type=text]');
+    console.dir(input);
+    input.value = '마음대로';
+
+    let body = document.body;
+    console.log(body);
+    console.dir(body);
+    body.style.backgroundColor = 'yellow'
+
+    // console.info('Hello');
+    // console.warn('Hello');
+    // console.error('Hello');
+    // document.write('Hello')
+    // document.body.innerHTML += 'Bye';
+    // alert('경고');
+    // print();
+    // window.print window.alert
+  </script>
+</body>

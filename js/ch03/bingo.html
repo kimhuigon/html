@@ -1,0 +1,68 @@
+<style>
+  table {
+    border-spacing: 0;
+    /* 테두리 두께 없애기 */
+    text-align: center;
+    /* 글자 중앙정렬 */
+    font-size: 1.5em;
+    /* 글자크기 1.5배 */
+  }
+
+  td {
+    border: 1px solid;
+    /* 모든 셀의 테두리 두께 1px */
+    width: 30px;
+  }
+
+  tr:first-child>td {
+    border-top: 3px solid;
+    /* 상단 테두리 두께 3px */
+  }
+
+  tr:last-child>td {
+    border-bottom: 3px solid;
+    /* 하단 테두리 두께 3px */
+  }
+
+  td:first-child {
+    border-left: 3px solid;
+    /* 좌측 테두리 두께 3px */
+  }
+
+  td:last-child {
+    border-right: 3px solid;
+    /* 우측 테두리 두께 3px */
+  }
+</style>
+
+<body>
+
+  <script>
+    const bingo = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    // 0.0 <= X < 1.0
+    // 0 ~ 4 => 1 ~ 5
+    const 변경될위치 = parseInt(Math.random() * bingo.length);
+    [bingo[0], bingo[변경될위치]] = [bingo[변경될위치], bingo[0]];
+    console.log(bingo);
+
+    let code = '<table>';
+    for (let i = 0; i < bingo.length; i++) {
+      if (i % 3 == 0) {
+        code += '<tr>';
+      }
+      code += `<td onclick="run(${bingo[i]})">${bingo[i]}</td>`;
+      if ((i + 1) % 3 == 0) {
+        code += '</tr>';
+      }
+    }
+    code += '</table>';
+
+    const body = document.querySelector('body');
+    body.innerHTML = code;
+
+    function run(num) {
+      alert(num);
+    }
+
+  </script>
+</body>

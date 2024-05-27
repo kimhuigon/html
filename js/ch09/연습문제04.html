@@ -1,0 +1,22 @@
+<body>
+  검색어 입력 : <input type="text" name="search">
+  <script>
+    const input = document.querySelector('[name=search]');
+    input.addEventListener('focus', (event) => {
+      let search = event.currentTarget.value;
+      if(!search) {
+        event.target.value = '#';
+      }
+    });
+
+    input.addEventListener('keypress', (e) => {
+      // space 입력 시 keyCode 32
+      let keyCode = event.keyCode;
+      if(keyCode == 32) {
+        event.returnValue = false;
+        event.target.value += ', #'
+      }
+    })
+  </script>
+
+</body>

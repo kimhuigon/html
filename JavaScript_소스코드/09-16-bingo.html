@@ -46,7 +46,7 @@
 
 <script>
   /* 1 ~ 9 배열 생성 */
-  const size = 3;
+  const size = 5;
   const numbers = new Array();
   for (let i = 1; i <= size * size; i++) {
     numbers.push(i);
@@ -57,7 +57,7 @@
   const table = document.createElement('table');
   let tr;
   for (let i = 0; i < numbers.length; i++) {
-    if (i % 3 == 0) {
+    if (i % 5 == 0) {
       tr = document.createElement('tr');
     }
     num = numbers[i];

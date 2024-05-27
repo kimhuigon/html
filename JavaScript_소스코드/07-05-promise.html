@@ -1,28 +1,31 @@
-<!DOCTYPE html>
-<html>
-
-<head></head>
-
 <body>
   <script>
-    let rs = setTimeout(() => {
-        rs = '작업완료';
-        run(rs);
-      }, 2000);
+    async function run2() {
+      const url = 'https://newsapi.org/v2/top-headlines?country=kr&apiKey=9f5baf7d9f3f42879a20d7d19d9886e4';
+      const res = await fetch(url);
+      const data = await res.json();
+      console.log(data);
+      const articles = data.articles;
+      articles.forEach((articles) => {
+        const title = articles.title
+        console.log(title);
+      });
+    }
+    run2();
 
-      function run(r) {
-        console.log(r);
-      }
-    
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve('작업완료');
         // reject(new Error('응답없음'));
       }, 2000);
     });
+    async function run() {
+      await promise;
+    }
 
-    promise.then(() => {});
-    // console.log(promise);
+    promise.then((res) => {
+      console.log(res);
+    });
     // promise.then((v) => {
     //   console.log(v);
     // })

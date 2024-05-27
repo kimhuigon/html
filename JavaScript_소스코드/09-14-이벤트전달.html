@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>Document</title>
-</head>
-
 <body>
   <style>
     div {
@@ -25,9 +18,11 @@
   <script>
     document.querySelector('div > div:first-child').addEventListener('click', (event) => {
       console.log('red div');
+      event.stopPropagation();
     });
     document.querySelector('div > div:last-child').addEventListener('click', (event) => {
       console.log('blue div');
+      event.stopPropagation();
     });
     document.querySelector('body > div').addEventListener('click', (event) => {
       console.log('parent div');

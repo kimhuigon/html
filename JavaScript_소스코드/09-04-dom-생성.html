@@ -6,12 +6,21 @@
 </head>
 
 <body>
+  <button onclick="add()">추가</button>
   <script>
-    const obj = document.createElement('h1')
-    obj.textContent = 'Header'
-    // const text = document.createTextNode('Header');
-    // obj.appendChild(text);
-    document.body.appendChild(obj);
+    function add() {
+      const obj = document.createElement('h1');
+      document.body.appendChild(obj);
+
+      obj.textContent = 'Header';
+      obj.style.backgroundColor = 'lightgray';
+      obj.style.display = 'inline-block';
+      
+      // obj.setAttribute("onclick", () => {});
+      obj.onclick = () => {
+        this.remove();
+      }
+    }
   </script>
 </body>
 

@@ -1,0 +1,29 @@
+<body>
+  <input type="text"> inch
+  <button>계산</button>
+  <p></p>
+</body>
+<script>
+  // 변환 공식 : inch * 2.54 => cm
+  // Event Driven Programming
+  const input = document.querySelector('input');
+  const p = document.querySelector('p');
+  const button = document.querySelector('button');
+  button.addEventListener('click', () => {
+    const value = input.value;
+    p.innerHTML = value * 2.54 + " cm";
+  });
+
+  input.addEventListener('keypress', (e) => {
+    // e.keyCode >= 48; // 아스키코드
+    if(e.key >= '0' && e.key <= '9') {
+
+    } else {
+      e.returnValue = false;
+      // let value = input.value;
+      // // 마지막 글자 1개 제거
+      // value = value.substring(0, value.length - 1);
+      // input.value = value;
+    }
+  });
+</script>

@@ -1,15 +1,24 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>Document</title>
-</head>
-
 <body>
-  <img src="http://placekitten.com/300/300" alt="">
+  <img src="http://ggoreb.com/images/summer.jpg" alt="">
+  <form onsubmit="return check()">
+    <input type="text">
+    <button>제출</button>
+  </form>
 </body>
 
 <script>
+  function check() {
+    if(!input.value) {
+      alert('반드시 갑을 입력해주세요');
+      input.focus();
+      return false;
+    }
+  }
+  const button = document.querySelector('button');
+  const input = document.querySelector('input');
+  button.addEventListener('click', () =>{
+  })
+
   const imgs = document.querySelectorAll('img')
   imgs.forEach((img) => {
     img.addEventListener('contextmenu', (event) => {

@@ -7,9 +7,13 @@
 
 <body>
   <script>
-    const max = ( ① ) {
+    const max = (i) => {
       let output = 0;
-      ( ② )
+      for(let num of i) {
+        if(num > output){
+          output = num
+        }
+      }
       return output;
     };
     console.log(max([1, 2, 3, 4]));

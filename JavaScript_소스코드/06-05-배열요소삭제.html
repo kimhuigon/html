@@ -1,20 +1,25 @@
-<!DOCTYPE html>
-<html>
-
-<head></head>
-
 <body>
   <script>
     const animals = ['🐶', '🐱', '🐷', '🐵', '🦝', '🐰'];
-
-    animals.pop();
     console.log(animals);
 
-    animals.shift();
+    const last = animals.pop();
+    console.log(last);
     console.log(animals);
 
-    animals.unshift('🐔');
+    const first = animals.shift();
+    console.log(first);
     console.log(animals);
+
+    delete animals[2]
+    console.log(animals);
+
+    for(let i = 0; i < animals.length; i++) {
+      console.log(animals[i]);
+      if(!animals[i]) {
+        animals[i] = '@';
+      }
+    }
   </script>
 </body>
 

@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-
-<head></head>
-
 <body>
   <script>
     let json = JSON.stringify(true);
     console.log(json);
     json = JSON.stringify(['apple', 'banana'])
-    console.log(json);
+    console.log(typeof json);
+
+    const obj = JSON.parse(json);
+    console.log(typeof obj);
   </script>
 </body>
 

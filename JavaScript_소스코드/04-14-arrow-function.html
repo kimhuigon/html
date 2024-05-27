@@ -11,12 +11,50 @@
 
     // 리스트 => 정렬
     // const f = function() {};
-    const list = [5, 3, 7, 43, 9];
-    list.sort((a, b) => { return a - b});
-    list.sort((a, b) => b - a); // a - b : 오름차순 / b - a : 내림차순
+    // const list = [5, 3, 7, 43, 9];
+    // list.sort((a, b) => { return a - b});
+    // list.sort((a, b) => b - a); // a - b : 오름차순 / b - a : 내림차순
+    // console.log(list);
 
     // list.sort(function() {});
     // list.sort(f);
+
+    // function a() {}
+    // const a = function() {}
+    // const b = () => {}
+
+    //                                        함수사용
+    navigator.geolocation.getCurrentPosition((p) => {
+      console.log('명령문');
+      console.log(p);
+      console.log(p.coords);
+      console.log(p.coords.latitude);
+      console.log(p.coords.longitude);
+    });
+
+    let 전역변수 = 10;
+
+    function 바깥() { // temp
+      let 변수 = 10; // 클로저
+      return function 안() {
+        변수++;
+        return 변수;
+        console.log(변수);
+      }
+    }
+
+    a();
+
+    function a() {
+      b();
+    }
+
+    function b() {
+      c();
+    }
+    function c() {
+      alert('ccc');
+    }
 
   </script>
 </body>
